@@ -19,7 +19,7 @@ $stmt->bind_result($userId, $dbUsername, $hashedPassword, $bgColor);
 $error = null;
 if ($stmt->fetch()) {
     if (password_verify($password, $hashedPassword)) {
-        // Store user information in the session
+        // session variables for working with user data
         $_SESSION['user_id'] = $userId;
         $_SESSION['username'] = $dbUsername;
         $_SESSION['bg_color'] = $bgColor;
