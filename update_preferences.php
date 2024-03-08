@@ -2,7 +2,7 @@
 session_start();
 include_once "db_credentials.php";
 
-// check whether the user is logged in and sends them to login if not
+// check whether the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();

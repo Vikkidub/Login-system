@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="dashboard.css">
 <?php session_start(); ?>
 
 <!DOCTYPE html>

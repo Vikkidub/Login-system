@@ -22,7 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
+    // $_SESSION['success_message'] = "User successfully created.";
+
     $mysqli->close();
 }
 
-header("Location: login.php");
+header("Location: index.php?user=submitted");

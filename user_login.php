@@ -26,7 +26,7 @@ if ($stmt->fetch()) {
 
         header('Location: dashboard.php');
     } else {
-        $error = 'invalid_credentials';
+        $error = 'wrong_password';
     }
 } else {
     $error = 'user_not_found';
@@ -38,6 +38,6 @@ $mysqli->close();
 
 // redirect to loginscreen in the case of an error
 if ($error !== null) {
-    header("Location: login.php?error=$error");
+    header("Location: index.php?error=$error");
     exit();
 }
