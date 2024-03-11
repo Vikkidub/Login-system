@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Username: " . $username . "<br>";
         echo "Password: " . $password. "<br>";
     */
+    
     include_once "db_credentials.php";
 
     // check whether the username is taken

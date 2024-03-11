@@ -28,6 +28,13 @@
         <input type="text" id="new_color" name="new_color" required>
         <button type="submit">Update Color</button>
     </form>
+
+    <!-- Return to loginscreen -->
+    </br></br>
+    <div>Log out</div>
+    <form method="post" action="index.php">
+        <button type="submit">Exit</button>
+    </form>
 </body>
 
 </html>
