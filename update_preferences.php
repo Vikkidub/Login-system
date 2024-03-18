@@ -2,7 +2,7 @@
 session_start();
 include_once "db_credentials.php";
 
-// check whether the user is logged in
+// users accessing the page without being logged in are directed to loginscreen
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();

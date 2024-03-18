@@ -28,6 +28,7 @@
         <input type="text" id="new_color" name="new_color" required>
         <button type="submit">Update Color</button>
     </form>
+    </br></br>
 
     <!-- Return to loginscreen -->
     </br></br>

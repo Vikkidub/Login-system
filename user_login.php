@@ -8,7 +8,7 @@ session_start();
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-// DB QUERY
+// db query
 $query = "SELECT id, username, passw, bg_color FROM users WHERE username = ?";
 $stmt = $mysqli->prepare($query);
 $stmt->bind_param('s', $username);
