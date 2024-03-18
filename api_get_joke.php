@@ -20,9 +20,9 @@ if ($response === false) {
 
     if ($data !== null && isset($data->joke)) {
         $joke = $data->joke;
-        echo $joke;
+        header("Location: dashboard.php?joke=" . urlencode($joke));
+        exit;
     } else {
         echo "Error parsing joke data.";
     }
 }
-

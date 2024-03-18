@@ -1,5 +1,14 @@
 <link rel="stylesheet" href="dashboard.css">
-<?php session_start(); ?>
+
+<?php
+session_start();
+
+if (isset ($_GET['joke'])) {
+    $joke = urldecode($_GET['joke']);
+} else {
+    $joke = 'Tell me a joke';
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +19,16 @@
     <title>Dashboard</title>
     <style>
         body {
-            background-color: <?php echo $_SESSION['bg_color']; ?>;
-            color: <?php echo ($_SESSION['bg_color'] === 'black') ? 'white' : 'black'; ?>;
+            background-color:
+                <?php echo $_SESSION['bg_color']; ?>
+            ;
+            color:
+                <?php echo ($_SESSION['bg_color'] === 'black') ? 'white' : 'black'; ?>
+            ;
         }
     </style>
 </head>
+
 <body>
     <?php
     echo "username and password is correct" . "<br><br>";
@@ -22,6 +36,7 @@
     echo "Your preferences: Background color = " . $_SESSION['bg_color'];
     ?>
     </br></br>
+    
     <div>Edit preferences:</div>
     <form method="post" action="update_preferences.php">
         <label for="new_color">Enter new background color:</label>
@@ -29,12 +44,14 @@
         <button type="submit">Update Color</button>
     </form>
     </br>
-    
-    <!-- https://icanhazdadjoke.com -->
-    <div>Tell me a joke</div>
+
+    <!-- Get joke from https://icanhazdadjoke.com/ -->
+    <div>
+        <?php echo $joke; ?>
+    </div>
     <form method="post" action="api_get_joke.php">
-    <button type="submit">Get joke</button>
-    </form> 
+        <button type="submit">Get joke</button>
+    </form>
 
     <!-- Return to loginscreen -->
     </br>
@@ -45,4 +62,3 @@
 </body>
 
 </html>
-
