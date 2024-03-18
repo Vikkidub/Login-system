@@ -28,10 +28,16 @@
         <input type="text" id="new_color" name="new_color" required>
         <button type="submit">Update Color</button>
     </form>
-    </br></br>
+    </br>
+    
+    <!-- https://icanhazdadjoke.com -->
+    <div>Tell me a joke</div>
+    <form method="post" action="api_get_joke.php">
+    <button type="submit">Get joke</button>
+    </form> 
 
     <!-- Return to loginscreen -->
-    </br></br>
+    </br>
     <div>Log out</div>
     <form method="post" action="index.php">
         <button type="submit">Exit</button>
