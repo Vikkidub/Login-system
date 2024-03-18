@@ -12,12 +12,17 @@ $options = array(
 );
 $context = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
-$data = json_decode($response);
 
-if ($data !== null) {
-    $joke = $data->joke;
-    echo $joke;
+if ($response === false) {
+    echo "Error fetching joke. Check your network connection or try again later.";
 } else {
-    echo "Error fetching joke.";
+    $data = json_decode($response);
+
+    if ($data !== null && isset($data->joke)) {
+        $joke = $data->joke;
+        echo $joke;
+    } else {
+        echo "Error parsing joke data.";
+    }
 }
 
